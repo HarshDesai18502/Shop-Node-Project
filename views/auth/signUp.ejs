@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/css/addProduct.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Shop</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/cart">Cart</a></li>
+          <% if(isLoggedIn == true) {%>
+          <li><a href="/admin/add-product" class="active">Add Product</a></li>
+          <li><a href="/admin/products">Admin Products</a></li>
+          <% } %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup" class="active">SignUp</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <% if(errorMessage) {%>
+
+      <div><%= errorMessage %></div>
+      <% } %>
+      <form action="/signup" method="POST">
+        <div>
+          <label for="email">Email:</label>
+          <input
+            class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %>"
+            type="email"
+            name="email"
+            id="email"
+            value="<%= oldInput.email%>"
+          />
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input
+            class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+            type="password"
+            name="password"
+            id="password"
+            value="<%= oldInput.password%>"
+          />
+        </div>
+
+        <div>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            class="<%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>"
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            value="<%= oldInput.confirmPassword%>"
+          />
+        </div>
+
+        <button type="submit">SignUp</button>
+      </form>
+    </main>
+  </body>
+</html>

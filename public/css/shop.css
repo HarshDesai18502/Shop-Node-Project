@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: rgb(92, 72, 163);
+  height: 3rem;
+}
+
+header nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+header a:hover {
+  color: rgb(212, 212, 62);
+}
+
+main {
+  display: flex;
+}
+
+.product_card {
+  border: solid black 1px;
+  margin: 10px;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+ul {
+  list-style: none;
+}
+
+.active {
+  color: yellow;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn {
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 5px;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #cccccc;
+}
+
+form {
+  margin-top: 7px;
+}
+
+.order button {
+  background-color: white;
+  color: rgb(92, 72, 163);
+  border: 2px solid rgb(92, 72, 163);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.order button:hover {
+  font-size: 1.25rem;
+  background-color: rgb(92, 72, 163);
+  color: white;
+}
+
+.orders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orders__item h1 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.orders__item {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.orders__products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.orders__products-item {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #00695c;
+  color: #00695c;
+}
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  border: solid 1px rgb(92, 72, 163);
+  padding: 5px;
+  color: rgb(92, 72, 163);
+  background-color: white;
+}
+
+.pagination a:hover {
+  background-color: rgb(92, 72, 163);
+  color: white;
+}
