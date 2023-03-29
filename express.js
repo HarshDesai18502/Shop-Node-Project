@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -54,7 +54,7 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-// app.use(helmet());
+app.use(helmet());
 app.use(morgan('tiny'));
 
 const corsOptions = {
