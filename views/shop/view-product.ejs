@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Product</title>
+
+    <link rel="stylesheet" href="/css/view-product.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Shop</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/cart">Cart</a></li>
+          <li><a href="/orders">Orders</a></li>
+          <% if(isLoggedIn == true) {%>
+          <li><a href="/admin/add-product">Add Product</a></li>
+          <li><a href="/admin/products">Admin Products</a></li>
+          <% } %> <% if(!isLoggedIn) {%>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">SignUp</a></li>
+          <% } else {%>
+          <li><a href="/logout">Logout</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="product_card">
+      <div>
+        <h1><%= prods.title %></h1>
+      </div>
+      <div>
+        <img src="/<%= prods.imageUrl %>" alt="" />
+      </div>
+      <div>
+        <p>Price: <%= prods.price %></p>
+        <p>Description: <%= prods.description %></p>
+        <% if(isLoggedIn) { %>
+        <form action="/cart" method="POST">
+          <button>Add to Cart</button>
+          <input type="hidden" name="productId" value="<%= prods.id %>" />
+        </form>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
