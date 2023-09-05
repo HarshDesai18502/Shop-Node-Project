@@ -23,7 +23,6 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 const logger = require('./logger');
 
-
 dotenv.config();
 
 const app = express();

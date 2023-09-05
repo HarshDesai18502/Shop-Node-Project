@@ -1,29 +1,29 @@
-const mongodb = require('mongodb');
+// const mongodb = require('mongodb');
 
-const { MongoClient } = mongodb;
+// const { MongoClient } = mongodb;
 
-let _db;
+// let _db;
 
-const mongoConnect = (callback) => {
-  MongoClient.connect(
-    'mongodb+srv://harshdesai18502:Simform%40123@cluster0.foj4wiv.mongodb.net/Shop?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
-    .then((client) => {
-      _db = client.db();
-      callback(client);
-    })
-    .catch((err) => {
-      throw err;
-    });
-};
+// const mongoConnect = (callback) => {
+//   MongoClient.connect(
+//     'mongodb+srv://harshdesai18502:Simform%40123@cluster0.lgzv6dj.mongodb.net/Shop',
+//     { useNewUrlParser: true, useUnifiedTopology: true }
+//   )
+//     .then((client) => {
+//       _db = client.db();
+//       callback(client);
+//     })
+//     .catch((err) => {
+//       throw err;
+//     });
+// };
 
-const getDb = () => {
-  if (_db) {
-    return _db;
-  }
-  throw new Error('No database Found');
-};
+// const getDb = () => {
+//   if (_db) {
+//     return _db;
+//   }
+//   throw new Error('No database Found');
+// };
 
-exports.mongoConnect = mongoConnect;
-exports.getDb = getDb;
+// exports.mongoConnect = mongoConnect;
+// exports.getDb = getDb;
